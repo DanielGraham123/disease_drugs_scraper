@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top py-4">
+        <div class="container">
+          <a class="navbar-brand" href="#">DiseaseInfo</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#"
+                  >Home <span class="sr-only">(current)</span></a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#diseasesId">Diseases</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#drugsId">Drugs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#analyticsId">Analytics</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Quote -->
+      <section id="quote" class="bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <blockquote class="blockquote">
+                <p class="my-3 text-center">
+                  Get verified information about any disease or drug from
+                  <strong>diseaseInfo</strong>
+                </p>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search section -->
+      <section id="searchSection" class="py-5">
+        <div class="container">
+          <div class="row py-5">
+            <div class="col-md-12 py-2 my-4 pt-5">
+              <h3 class="text-center mb-3 searchTitle line-1 anim-typewriter">
+                DiseaseSearch
+              </h3>
+              <form action="" id="searchForm">
+                <div class="input-group mb-3 searchInput mx-auto">
+                  <input
+                    type="search"
+                    class="form-control rounded-pill pl-4 pr-4 py-4 shadow-sm border-0"
+                    placeholder="Search Diseases here"
+                    aria-label="Search Diseases here"
+                    aria-describedby="basic-addon2"
+                  />
+                  <div class="input-group-append">
+                    <button class="btn btn-search">
+                      <i class="fa fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Diseases listing -->
+      <section id="diseaseSection" class="py-5">
+        <div id="diseasesId" class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="text-center font-weight-bold">–– Diseases ––</h3>
+
+              <div class="row mt-5">
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Disease Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                    >
+                      <a href class="btn btn-link text-secondary"
+                        ><i>Read Details</i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Disease Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                    >
+                      <a href class="btn btn-link text-secondary"
+                        ><i>Read Details</i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Disease Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                    >
+                      <a href class="btn btn-link text-secondary"
+                        ><i>Read Details</i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Disease Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                    >
+                      <a href class="btn btn-link text-secondary"
+                        ><i>Read Details</i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Disease Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                    >
+                      <a href class="btn btn-link text-secondary"
+                        ><i>Read Details</i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Disease Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                    >
+                      <a href class="btn btn-link text-secondary"
+                        ><i>Read Details</i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Disease Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                    >
+                      <a href class="btn btn-link text-secondary"
+                        ><i>Read Details</i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Disease Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                    <div
+                      class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                    >
+                      <a href class="btn btn-link text-secondary"
+                        ><i>Read Details</i></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center mt-5">
+                <a class="btn btn-outline-more rounded-0">View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Drugs listing -->
+      <section id="drugSection" class="py-5">
+        <div id="drugsId" class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="text-center font-weight-bold">–– Drugs ––</h3>
+
+              <div class="row mt-5">
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Drug Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Drug Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Drug Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Drug Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Drug Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Drug Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Drug Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <div
+                    class="card rounded-0 border-0 bg-transparent text-center"
+                  >
+                    <h5 class="card-header rounded-0 border-0 bg-transparent">
+                      Drug Name
+                    </h5>
+                    <div class="card-body py-auto">
+                      <p class="my-0 text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit...
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-center mt-5">
+                <a class="btn btn-outline-more rounded-0">View More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Analytics -->
+      <section id="analyticsSection" class="py-5">
+        <div id="analyticsId" class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h3 class="text-center font-weight-bold">–– Analytics ––</h3>
+
+              <div class="row py-5">
+                <div class="col-md-6 text-center">
+                  <i class="fa fa-heartbeat text-indigo" aria-hidden="true"></i>
+                  <h2 class="mt-3 mb-1 number">13508</h2>
+                  <small><strong>Diseases</strong></small>
+                </div>
+                <div class="col-md-6 text-center">
+                  <i class="fa fa-medkit text-indigo"></i>
+                  <h2 class="mt-3 mb-1 number">13508</h2>
+                  <small><strong>Drugs</strong></small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row py-5">
+          <div class="col-md-3">
+            <h4 class="text-white">Links</h4>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Diseases</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Drugs</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Analytics</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4 class="text-white">Links</h4>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Diseases</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Drugs</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Analytics</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4 class="text-white">Links</h4>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Diseases</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Drugs</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Analytics</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h4 class="text-white">Links</h4>
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="#" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Diseases</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Drugs</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Analytics</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">About</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JQuery -->
+    <script src="js/jquery-3.5.1.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.js"></script>
+    <!-- Counter Up JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.js"></script>
+    <!-- Way points JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+    <script>
+      $(".number").counterUp({ delay: 30, time: 2000 });
+    </script>
+  </body>
+</html>
