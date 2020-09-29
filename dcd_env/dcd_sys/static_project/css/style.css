@@ -1,0 +1,203 @@
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #e83e8c;
+  --red: #dc3545;
+  --orange: #fd7e14;
+  --yellow: #ffc107;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #6c757d;
+  --gray-light: #c0c4c9;
+  --gray-dark: #343a40;
+  --primary: #007bff;
+  --secondary: #6c757d;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #343a40;
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav,
+footer {
+  background: var(--indigo) !important;
+}
+
+nav a,
+footer a {
+  color: white !important;
+}
+
+nav a:hover,
+footer a:hover {
+  color: rgb(163, 162, 173) !important;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+a.navbar-brand:hover {
+  color: white !important;
+}
+
+/* Main */
+
+#quote {
+  margin-top: 6em;
+}
+
+#searchSection {
+  background: url(../img/health-bg.jpg);
+  background-size: cover;
+  height: 29.3em;
+}
+
+.searchInput {
+  width: 60% !important;
+}
+
+.searchInput .input-group-append {
+  margin-left: -2.8em !important;
+  z-index: 5;
+}
+
+input[type="search"].form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: rgb(189, 189, 189) !important;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+h3.searchTitle {
+  font-weight: 600 !important;
+  color: var(--dark) !important;
+}
+
+.line-1{
+    top: 50%;  
+    /* width: 24em; */
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 180%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 4s steps(15) 1s 1 normal both,
+    blinkTextCursor 500ms steps(15) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 7.5em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: var(--indigo);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+#diseaseSection .card {
+  background: var(--gray-light);
+  box-shadow: -0.125rem 0.125rem 0.85rem rgba(0, 0, 0, 0.075) !important;
+  transition: 0.5s;
+}
+
+#diseaseSection .card:hover {
+  background: var(--gray-light);
+  box-shadow: 0rem 0.25rem 2rem rgba(0, 0, 0, 0.075) !important;
+  color: var(--indigo);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.btn.btn-outline-more {
+  border: 1px solid var(--gray);
+  color: var(--gray);
+}
+
+#diseaseSection .btn.btn-outline-more:hover {
+  border: 1px solid var(--gray-dark);
+  color: var(--gray-dark);
+}
+
+#drugSection {
+  background: url(../img/drugs.jpg);
+  background-size: cover;
+}
+
+#drugSection .card {
+  transition: 0.8s;
+}
+
+#drugSection .card:hover {
+  background: var(--light) !important;
+  box-shadow: 0rem 0.25rem 2rem rgba(0, 0, 0, 0.075) !important;
+  color: var(--dark);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.white-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0.5;
+}
+
+#analyticsSection {
+  background: #ecf0f1;
+}
+
+#diseaseSection h3,
+#drugSection h3,
+#analyticsSection h3 {
+  text-transform: uppercase;
+}
+
+#analyticsSection i.fa {
+  font-size: 3rem !important;
+}
+
+.text-indigo {
+  color: var(--indigo) !important;
+}
+/* footer */
+footer {
+  height: 100% !important;
+  /* top: 8em;  */
+  position: relative;
+  bottom: 0;
+}
