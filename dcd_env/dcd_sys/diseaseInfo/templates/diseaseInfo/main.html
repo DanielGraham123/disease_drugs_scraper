@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Home
+{% endblock title %}
+
+{% block content %}
+  <!-- Quote -->
+  <section id="quote" class="bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <blockquote class="blockquote">
+            <p class="my-3 text-center">
+              Get verified information about any disease or drug from
+              <strong>diseaseInfo</strong>
+            </p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search section -->
+  <section id="searchSection" class="py-5">
+    <div class="container">
+      <div class="row py-5">
+        <div class="col-md-12 py-2 my-4 pt-5">
+          <h3 class="text-center mb-3 searchTitle line-1 anim-typewriter">
+            DiseaseSearch
+          </h3>
+          <form action="" id="searchForm">
+            <div class="input-group mb-3 searchInput mx-auto">
+              <input
+                type="search"
+                class="form-control rounded-pill pl-4 pr-4 py-4 shadow-sm border-0"
+                placeholder="Search Diseases here"
+                aria-label="Search Diseases here"
+                aria-describedby="basic-addon2"
+              />
+              <div class="input-group-append">
+                <button class="btn btn-search">
+                  <i class="fa fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diseases listing -->
+  <section id="diseaseSection" class="py-5">
+    <div id="diseasesId" class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center font-weight-bold">–– Diseases ––</h3>
+
+          <div class="row mt-5">
+
+            {% for disease in diseases_fil %}
+            <div class="col-md-3 mb-3">
+              <div
+                class="card rounded-0 border-0 bg-transparent text-center"
+              >
+                <h5 class="card-header rounded-0 border-0 bg-transparent">
+                  {{ disease.name | truncatechars:30 }}
+                </h5>
+                <div class="card-body py-auto">
+                  <p class="my-0 text-secondary">
+                    {{ disease.description | truncatechars:30 }}
+                  </p>
+                </div>
+                <div
+                  class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                >
+                  <a href class="btn btn-link text-secondary"
+                    ><i>Read Details</i></a
+                  >
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            
+          </div>
+
+          <div class="d-flex justify-content-center mt-5">
+            <a class="btn btn-outline-more rounded-0">View More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drugs listing -->
+  <section id="drugSection" class="py-5">
+    <div id="drugsId" class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center font-weight-bold">–– Drugs ––</h3>
+
+          <div class="row mt-5">
+            
+            {% for drug in drugs_fil %}
+            <div class="col-md-3 mb-3">
+              <div
+                class="card rounded-0 border-0 bg-transparent text-center"
+              >
+                <h5 class="card-header rounded-0 border-0 bg-transparent">
+                  {{ drug.name | truncatechars:30 }}
+                </h5>
+                <div class="card-body py-auto">
+                  <p class="my-0 text-secondary">
+                   {{ drug.uses | truncatechars:60}}
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+           
+          </div>
+
+          <div class="d-flex justify-content-center mt-5">
+            <a class="btn btn-outline-more rounded-0">View More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Analytics -->
+  <section id="analyticsSection" class="py-5">
+    <div id="analyticsId" class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="text-center font-weight-bold">–– Analytics ––</h3>
+
+          <div class="row py-5">
+            <div class="col-md-6 text-center">
+              <i class="fa fa-heartbeat text-indigo" aria-hidden="true"></i>
+              <h2 class="mt-3 mb-1 number">{{ diseases.count }} </h2>
+              <small><strong>Diseases</strong></small>
+            </div>
+            <div class="col-md-6 text-center">
+              <i class="fa fa-medkit text-indigo"></i>
+              <h2 class="mt-3 mb-1 number"> {{ drugs.count }} </h2>
+              <small><strong>Drugs</strong></small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
