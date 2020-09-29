@@ -11,10 +11,10 @@ import json
 
 from collections import OrderedDict
 from scrapy.crawler import CrawlerProcess
-from dcd_spider.items import DiseaseItem
+from dcd_spider.items import DiseaseItem, DrugItem
 
-OUTPUT_FILE1 = 'mayo-diseases.json'
-OUTPUT_FILE2 = 'webmd-drugs.json'
+# OUTPUT_FILE1 = 'mayo-diseases.json'
+# OUTPUT_FILE2 = 'webmd-drugs.json'
 
 diseases = []
 drugs = []
@@ -116,28 +116,30 @@ class DrugsSpider(scrapy.Spider):
         for link in drugs_links:
             yield response.follow(link, self.parse_drug)
     
-    def parse_drug(self, response):        
-        name = response.css('div.drug-names h1::text').get()   
-        generic_name = response.css('div.drug-names').xpath('.//p[1]/text()').get().split(':')[1].strip()
-        other_name = response.css('div.drug-names').xpath('.//p[2]/text()').get().split(':')[1].strip()
+    def parse_drug(self, response):  
+        item = DrugItem()
+        item['name'] = response.css('div.drug-names h1::text').get()   
+        item['generic_name'] = response.css('div.drug-names').xpath('.//p[1]/text()').get().split(':')[1].strip()
+        item['other_name'] = response.css('div.drug-names').xpath('.//p[2]/text()').get().split(':')[1].strip()
         
-        uses = self.convertToText(response.css('div.tab-content').xpath('.//div[h2/text() = "Uses"]/p'))
+        item['uses'] = self.convertToText(response.css('div.tab-content').xpath('.//div[h2/text() = "Uses"]/p'))
         
-        side_effects = self.listify(
+        item['side_effects'] = self.listify(
                             self.convertToText(response.css('div.tab-content').xpath('.//div[h2/text() = "Side Effects"]/p'))
                             )
          
-        precautions = self.listify(
+        item['precautions'] = self.listify(
                             self.convertToText(response.css('div.tab-content').xpath('.//div[h2/text() = "Precautions"]/p'))
                             )
         
-        interactions = self.listify(
+        item['interactions'] = self.listify(
                             self.convertToText(response.css('div.tab-content').xpath('.//div[h2/text() = "Interactions"]/p'))
                             )
         
-        storage = self.listify(
+        item['storage'] = self.listify(
                             self.convertToText(response.css('div#tab-5 div.inner-content').xpath('.//h3[text() = "Storage"]/following-sibling::p'))
                             )
+        item['link'] = response.url
         
         # drugs.append(
         #     OrderedDict([

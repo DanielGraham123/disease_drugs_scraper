@@ -2,14 +2,16 @@ from django.shortcuts import render
 from django.conf import settings
 import os
 import json
-from .models import Disease
+from .models import Disease, Drug
 
 # Create your views here.
 def home(request):
     diseases = Disease.objects.all().order_by('id')[:12]
+    drugs = Drug.objects.all().order_by('id')[:12]
 
     context = {
-        'diseases': diseases
+        'diseases': diseases,
+        'drugs': drugs
     }
     return render(request, 'diseaseInfo/main.html', context)
 

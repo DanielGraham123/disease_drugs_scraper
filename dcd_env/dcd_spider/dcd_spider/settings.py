@@ -80,8 +80,8 @@ DOWNLOAD_DELAY = 3
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    # 'scrapy.pipelines.images.ImagesPipeline': 100,
-   'dcd_spider.pipelines.DcdSpiderPipeline': 300,
+    'dcd_spider.pipelines.DiseasesPipeline': 200,
+   'dcd_spider.pipelines.DrugsPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
