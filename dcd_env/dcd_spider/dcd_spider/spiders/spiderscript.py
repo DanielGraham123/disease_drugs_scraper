@@ -155,7 +155,8 @@ class DrugsSpider(scrapy.Spider):
         #         ])
         #     )
         
-        # yield from drugs    
+        # yield from drugs   
+        return item 
         
     def convertToText(self, response):
         chunks = response.xpath('.//text()').getall()

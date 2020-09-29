@@ -6,12 +6,17 @@ from .models import Disease, Drug
 
 # Create your views here.
 def home(request):
-    diseases = Disease.objects.all().order_by('id')[:12]
-    drugs = Drug.objects.all().order_by('id')[:12]
+    diseases_fil = Disease.objects.all().order_by('id')[:12]
+    drugs_fil = Drug.objects.all().order_by('id')[:12]
+
+    diseases = Disease.objects.all().values()
+    drugs = Drug.objects.all().values()
 
     context = {
+        'diseases_fil': diseases_fil,
+        'drugs_fil': drugs_fil,
         'diseases': diseases,
-        'drugs': drugs
+        'drugs': drugs,
     }
     return render(request, 'diseaseInfo/main.html', context)
 

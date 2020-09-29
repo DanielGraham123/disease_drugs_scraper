@@ -59,13 +59,13 @@
 
           <div class="row mt-5">
 
-            {% for disease in diseases %}
+            {% for disease in diseases_fil %}
             <div class="col-md-3 mb-3">
               <div
                 class="card rounded-0 border-0 bg-transparent text-center"
               >
                 <h5 class="card-header rounded-0 border-0 bg-transparent">
-                  {{ disease.name | safe }}
+                  {{ disease.name | truncatechars:30 }}
                 </h5>
                 <div class="card-body py-auto">
                   <p class="my-0 text-secondary">
@@ -102,17 +102,17 @@
 
           <div class="row mt-5">
             
-            {% for drug in drugs %}
+            {% for drug in drugs_fil %}
             <div class="col-md-3 mb-3">
               <div
                 class="card rounded-0 border-0 bg-transparent text-center"
               >
                 <h5 class="card-header rounded-0 border-0 bg-transparent">
-                  {{ drug.name }}
+                  {{ drug.name | truncatechars:30 }}
                 </h5>
                 <div class="card-body py-auto">
                   <p class="my-0 text-secondary">
-                   {{ drug.uses | truncatechars:40}}
+                   {{ drug.uses | truncatechars:60}}
                   </p>
                 </div>
               </div>
@@ -139,12 +139,12 @@
           <div class="row py-5">
             <div class="col-md-6 text-center">
               <i class="fa fa-heartbeat text-indigo" aria-hidden="true"></i>
-              <h2 class="mt-3 mb-1 number">13508</h2>
+              <h2 class="mt-3 mb-1 number">{{ diseases.count }} </h2>
               <small><strong>Diseases</strong></small>
             </div>
             <div class="col-md-6 text-center">
               <i class="fa fa-medkit text-indigo"></i>
-              <h2 class="mt-3 mb-1 number">13508</h2>
+              <h2 class="mt-3 mb-1 number"> {{ drugs.count }} </h2>
               <small><strong>Drugs</strong></small>
             </div>
           </div>

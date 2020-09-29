@@ -30,7 +30,7 @@ class DiseasesPipeline:
             risks = clean_list(item['risks'])
             complications = clean_list(item['complications'])
             link = item['link']
-
+            
             Disease.objects.create(
                 name = name,
                 description = description,
@@ -41,8 +41,9 @@ class DiseasesPipeline:
                 preventions = preventions,
                 link = link
             )
+        item.save()
 
-            return item
+        return item
 
 class DrugsPipeline:
     def process_item(self, item, spider):
@@ -68,6 +69,7 @@ class DrugsPipeline:
                 storage = storage,
                 link = link
             )
+        item.save()
 
         return item
 
