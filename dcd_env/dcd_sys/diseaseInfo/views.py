@@ -54,3 +54,6 @@ def search(request):
 
     return render(request, 'diseaseInfo/search_results.html', context)
 
+def details(request, name, description):
+    disease_detail = Diseases.objects.get()
+

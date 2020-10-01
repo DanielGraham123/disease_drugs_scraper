@@ -111,7 +111,7 @@ h3.searchTitle {
     width: 0;
   }
   to {
-    width: 7.5em;
+    width: 10.2em;
   }
 }
 @keyframes blinkTextCursor {
@@ -203,8 +203,19 @@ h3.searchTitle {
   color: #fff !important;
 } 
 
+#searchPage .page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: var(--indigo);
+  border-color: var(--indigo);
+}
+
 #searchPage a.page-link {
   color: var(--indigo) !important;
+}
+
+#searchPage .searchInput {
+  width: 80% !important;
 }
 
 

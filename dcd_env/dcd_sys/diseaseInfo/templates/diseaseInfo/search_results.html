@@ -12,7 +12,33 @@
         <div class="row">
             <div class="col-md-12 py-5">
 
-                <h3 class="text-left mt-5">Search results for &quot;<b>{{ query }}</b>&quot;</h3>
+                <div class="row pt-5">
+                    <div class="col-md-6 my-auto">
+                        <h4 class="text-left">Search results for &quot;<b>{{ query }}</b>&quot;</h4>
+                    </div>
+
+                    <div class="col-md-6 my-2">
+                        <form action="{% url 'diseaseInfo:search' %}" id="searchForm">
+                            <div class="input-group mb-3 searchInput mx-auto">
+                              <input
+                                type="search"
+                                name="q"
+                                value="{{request.GET.q}}"
+                                class="form-control rounded-pill pl-4 pr-4 py-4 border-1"
+                                placeholder="Search a disease or drug"
+                                aria-label="Search Diseases here"
+                                aria-describedby="basic-addon2"
+                                autofocus
+                              />
+                              <div class="input-group-append">
+                                <button class="btn btn-search" type="submit">
+                                  <i class="fa fa-search"></i>
+                                </button>
+                              </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
                 <div class="row mt-5">
                     {% for result in results  %}
@@ -20,9 +46,11 @@
                         <div
                         class="card rounded-0 border-0 bg-transparent text-center"
                         >
-                        <h5 class="card-header rounded-0 border-0 bg-transparent">
-                            {{ result.name | truncatechars:30 }} 
-                        </h5>
+                        <a href class="btn btn-link text-secondary">
+                            <h5 class="card-header py-0 rounded-0 border-0 bg-transparent">
+                                {{ result.name | truncatechars:30 }} 
+                            </h5>
+                        </a>
                         <div class="card-body py-auto">
                             <p class="my-0 text-secondary">
                                 
@@ -32,15 +60,20 @@
                                 {{ result.uses | truncatechars:60 }}
                                 {% endif %}
                                     
-                            {{ result.description | truncatechars:60 }}
                             </p>
                         </div>
                         <div
-                            class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                            class="card-footer py-0 mt-0 rounded-0 border-0 bg-transparent"
                         >
-                            <a href class="btn btn-link text-secondary"
-                            ><i>Read Details</i></a
-                            >
+                            {% if result.get_model_type == 'Disease' %}
+                                <small><span class="badge badge-secondary"><i>disease</i></span></small>
+                            {% elif result.get_model_type == 'Drug' %}
+                                <small><span class="badge badge-primary"><i>drug</i></span></small>
+                            {% endif %}
+
+                            <!-- <a href class="btn btn-link text-secondary"
+                            ><i><small>Read more</small></i></a
+                            > -->
                         </div>
                         </div>
                     </div>
@@ -48,7 +81,7 @@
                 </div>
 
                 {% if results.has_other_pages %}
-                <nav aria-label="Page navigation example" class="pagination-nav d-flex justify-content-center">
+                <nav aria-label="Page navigation example" class="pagination-nav mt-5 d-flex justify-content-center">
                     <ul class="pagination">
                         
                         {% if results.has_previous %}

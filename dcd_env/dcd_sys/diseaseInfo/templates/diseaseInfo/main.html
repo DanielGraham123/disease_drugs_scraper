@@ -27,7 +27,7 @@
       <div class="row py-5">
         <div class="col-md-12 py-2 my-4 pt-5">
           <h3 class="text-center mb-3 searchTitle line-1 anim-typewriter">
-            DiseaseSearch
+            DCD Search Engine
           </h3>
           <form action="{% url 'diseaseInfo:search' %}" id="searchForm">
             <div class="input-group mb-3 searchInput mx-auto">
@@ -36,9 +36,10 @@
                 name="q"
                 value="{{request.GET.q}}"
                 class="form-control rounded-pill pl-4 pr-4 py-4 shadow-sm border-0"
-                placeholder="Search Diseases here"
+                placeholder="Search for a disease condition or drug here"
                 aria-label="Search Diseases here"
                 aria-describedby="basic-addon2"
+                autofocus
               />
               <div class="input-group-append">
                 <button class="btn btn-search" type="submit">
