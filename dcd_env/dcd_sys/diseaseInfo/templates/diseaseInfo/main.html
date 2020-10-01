@@ -33,8 +33,8 @@
             <div class="input-group mb-3 searchInput mx-auto">
               <input
                 type="search"
-                name="searchQuery"
-                value="{{request.GET.searchQuery}}"
+                name="q"
+                value="{{request.GET.q}}"
                 class="form-control rounded-pill pl-4 pr-4 py-4 shadow-sm border-0"
                 placeholder="Search Diseases here"
                 aria-label="Search Diseases here"
@@ -114,7 +114,7 @@
                 </h5>
                 <div class="card-body py-auto">
                   <p class="my-0 text-secondary">
-                   {{ drug.uses | truncatechars:60}}
+                   {{ drug.uses | truncatechars:60 }}
                   </p>
                 </div>
               </div>

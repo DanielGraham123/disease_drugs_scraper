@@ -199,9 +199,14 @@ h3.searchTitle {
   background: white !important;
 }
 
-#searchPage nav a {
+#searchPage nav .page-item.active a.page-link {
+  color: #fff !important;
+} 
+
+#searchPage a.page-link {
   color: var(--indigo) !important;
 }
+
 
 /* footer */
 footer {

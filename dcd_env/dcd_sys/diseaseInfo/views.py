@@ -4,6 +4,7 @@ from .models import Disease, Drug
 
 from django.db.models import Q
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from itertools import chain
 
 
 def home(request):
@@ -22,16 +23,22 @@ def home(request):
     return render(request, 'diseaseInfo/main.html', context)
 
 def search(request):
-    query = request.GET['searchQuery']
+    query = request.GET.get('q')
 
     if query:
-        result_set = Disease.objects.filter(Q(name__icontains=query) | Q(description__icontains=query))
+        diseases_result = Disease.objects.filter(Q(name__icontains=query) | Q(description__icontains=query) | Q(symptoms__icontains=query) | Q(risks__icontains=query) | Q(causes__icontains=query))
+
+        drugs_result = Drug.objects.filter(Q(name__icontains=query) | Q(uses__icontains=query) | Q(generic_name__icontains=query) | Q(other_name__icontains=query) | Q(side_effects__icontains=query) | Q(precautions__icontains=query) | Q(interactions__icontains=query))
     else:
-        result_set = Disease.objects.filter()
+        diseases_result = Disease.objects.filter()
+        drugs_result = Drug.objects.filter()
+        
 
     page = request.GET.get('page', 1)
 
-    paginator = Paginator(result_set, 10)
+    result_set = chain(diseases_result, drugs_result)
+
+    paginator = Paginator(list(result_set), 12)
 
     try:
         results = paginator.page(page)

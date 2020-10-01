@@ -25,6 +25,13 @@
                         </h5>
                         <div class="card-body py-auto">
                             <p class="my-0 text-secondary">
+                                
+                                {% if result.get_model_type == 'Disease' %}
+                                {{ result.description | truncatechars:60 }}
+                                {% elif result.get_model_type == 'Drug' %}
+                                {{ result.uses | truncatechars:60 }}
+                                {% endif %}
+                                    
                             {{ result.description | truncatechars:60 }}
                             </p>
                         </div>
@@ -46,7 +53,7 @@
                         
                         {% if results.has_previous %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ results.previous_page_number }}" aria-label="Previous">
+                            <a class="page-link" href="?page={{ results.previous_page_number }}&q={{ query }}" aria-label="Previous">
                             <span aria-hidden="true">&laquo;</span>
                             </a>
                         </li>
@@ -54,22 +61,30 @@
                         <li class="page-item disabled"><span>&laquo;</span></li>
                         {% endif %}
 
+                        {% if results.number|add:'-8' > 1 %}
+                            <li class="page-item"><a class="page-link" href="?page={{ results.number|add:'-9' }}&q={{ query }}">&hellip;</a></li>
+                        {% endif %}
+
                         {% for i in results.paginator.page_range %}
                         
-                        {% if results.number == i %}
-                        <li class="page-item active" aria-current="page">
-                            <a class="page-link"> {{ i }} <span class="sr-only">(current)</span></a>
-                        </li>
-                        {% else %}
-                        <li class="page-item"><a class="page-link" href="?page={{ i }}"> {{ i }} </a></li>
-                        {% endif %}
+                            {% if results.number == i %}
+                            <li class="page-item active" aria-current="page">
+                                <a class="page-link"> {{ i }} <span class="sr-only">(current)</span></a>
+                            </li>
+                            {% elif i > results.number|add:'-5' and i < results.number|add:'5' %}
+                            <li class="page-item"><a class="page-link" href="?page={{ i }}&q={{ query }}"> {{ i }} </a></li>
+                            {% endif %}
                             
                         {% endfor %}
+
+                        {% if results.paginator.num_pages > results.number|add:'4' %}
+                            <li class="page-item"><a class="page-link" href="?page={{ results.number|add:'5' }}&q={{ query }}">&hellip;</a></li>
+                        {% endif %}
                             
                         
                         {% if results.has_next %}
                         <li class="page-item">
-                            <a class="page-link" href="?page={{ results.next_page_number }}" aria-label="Next">
+                            <a class="page-link" href="?page={{ results.next_page_number }}&q={{ query }}" aria-label="Next">
                             <span aria-hidden="true">&raquo;</span>
                             </a>
                         </li>
@@ -83,8 +98,6 @@
             </div>
         </div>
         
-        
-            
         
     </div> 
 </section>
