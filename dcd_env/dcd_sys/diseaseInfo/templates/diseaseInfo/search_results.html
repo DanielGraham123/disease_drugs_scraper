@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Search Result
+{% endblock title %}
+
+{% block content %}
+
+<section id="searchPage" class="py-5">
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-12 py-5">
+
+                <h3 class="text-left mt-5">Search results for &quot;<b>{{ query }}</b>&quot;</h3>
+
+                <div class="row mt-5">
+                    {% for result in results  %}
+                    <div class="col-md-3 mb-3">
+                        <div
+                        class="card rounded-0 border-0 bg-transparent text-center"
+                        >
+                        <h5 class="card-header rounded-0 border-0 bg-transparent">
+                            {{ result.name | truncatechars:30 }} 
+                        </h5>
+                        <div class="card-body py-auto">
+                            <p class="my-0 text-secondary">
+                            {{ result.description | truncatechars:60 }}
+                            </p>
+                        </div>
+                        <div
+                            class="card-footer py-1 mt-0 rounded-0 border-0 bg-transparent"
+                        >
+                            <a href class="btn btn-link text-secondary"
+                            ><i>Read Details</i></a
+                            >
+                        </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                {% if results.has_other_pages %}
+                <nav aria-label="Page navigation example" class="pagination-nav d-flex justify-content-center">
+                    <ul class="pagination">
+                        
+                        {% if results.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ results.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled"><span>&laquo;</span></li>
+                        {% endif %}
+
+                        {% for i in results.paginator.page_range %}
+                        
+                        {% if results.number == i %}
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link"> {{ i }} <span class="sr-only">(current)</span></a>
+                        </li>
+                        {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{ i }}"> {{ i }} </a></li>
+                        {% endif %}
+                            
+                        {% endfor %}
+                            
+                        
+                        {% if results.has_next %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ results.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                        {% else %}
+                        <li class="page-item disabled"><span>&raquo;</span></li>
+                        {% endif %}
+                            
+                    </ul>
+                </nav>
+                {% endif %}
+            </div>
+        </div>
+        
+        
+            
+        
+    </div> 
+</section>
+
+  
+{% endblock content %}

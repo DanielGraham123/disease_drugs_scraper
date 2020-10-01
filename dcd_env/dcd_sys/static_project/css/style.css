@@ -194,6 +194,15 @@ h3.searchTitle {
 .text-indigo {
   color: var(--indigo) !important;
 }
+
+#searchPage nav.pagination-nav {
+  background: white !important;
+}
+
+#searchPage nav a {
+  color: var(--indigo) !important;
+}
+
 /* footer */
 footer {
   height: 100% !important;

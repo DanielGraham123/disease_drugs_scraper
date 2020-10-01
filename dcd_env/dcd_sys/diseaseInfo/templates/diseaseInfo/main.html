@@ -29,17 +29,19 @@
           <h3 class="text-center mb-3 searchTitle line-1 anim-typewriter">
             DiseaseSearch
           </h3>
-          <form action="" id="searchForm">
+          <form action="{% url 'diseaseInfo:search' %}" id="searchForm">
             <div class="input-group mb-3 searchInput mx-auto">
               <input
                 type="search"
+                name="searchQuery"
+                value="{{request.GET.searchQuery}}"
                 class="form-control rounded-pill pl-4 pr-4 py-4 shadow-sm border-0"
                 placeholder="Search Diseases here"
                 aria-label="Search Diseases here"
                 aria-describedby="basic-addon2"
               />
               <div class="input-group-append">
-                <button class="btn btn-search">
+                <button class="btn btn-search" type="submit">
                   <i class="fa fa-search"></i>
                 </button>
               </div>
